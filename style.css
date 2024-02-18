@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*, :root { /* seletor universal para todos os elementos */
+    /* border: 1px solid red; bom para ver as tags separadas */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* caixa de borta a borda */
+
+    font-family: 'Inter', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    /* VARIÁVEIS */
+    --cor-bg: #001c22;
+    --cor-perguntas: #0d4247;
+    --cor-repostas: #082b2e;
+    --cor-acertos: #ff8000;
+    --cor-texto: #f1f5f9;
+}  
+
+body {
+    background-color: var(--cor-bg);
+}
+
+main {
+    padding: 20px;
+    max-width: 840px;
+    margin: 0 auto 64px;
+    /* border: 1px solid red; */
+}
+
+header {
+    margin-top: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #999999;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-top: 24px;
+    color: var(--cor-texto);
+}
+
+#quiz { /* Contador - Para numero antes das perguntas */
+    counter-reset: quiz-item;
+
+}
+
+.quiz-item {
+    margin-top: 24px;
+    border: 1px solid #999999;
+    border-radius: 6px;
+
+    overflow: hidden;
+    background-color: var(--cor-repostas);
+}
+
+.quiz-item h3 {
+    padding: 16px 20px;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: var(--cor-perguntas);
+}
+ 
+.quiz-item h3:before { /* Para escrever algo antes das perguntas */
+    counter-increment: quiz-item; /* chamar o contador */
+    content: counter(quiz-item);                   
+    background-color: var(--cor-repostas);
+    width:  28px;
+    height: 29px;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* para mão achatar a bolinha */
+}
+
+
+.quiz-item dl {
+    padding: 20px 24px;
+    display: grid;
+    gap: 8px;
+}
+
+.quiz-item dl dt {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--cor-texto);
+}
+
+input { /* mudar a bolinha padrao para o que você quiser bola/quadrado */
+    all: unset; /*todas as propriedades do input */
+    border: 1px solid #999999;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    display: flex; /* mudar a localização da bolinha */
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0; /* para nao achatar */
+}
+
+input:checked {  /* mudar quando a bolinha estiver clicada */ 
+    border: 1px solid var(--cor-acertos);
+}
+
+/* pseudo-selector */
+input:checked::before { /* elemento antes do conteudo */
+    content: ""; /* conteudo vazio pois vai criar uma rodinha, mas poderia ser um texto e etc */
+    width: 10px;
+    height: 10px;
+    display: block;
+    background-color: var(--cor-acertos);
+    border-radius: 50%;
+}
+
+
+#acertos{
+    text-align: center;
+    background-color: var(--cor-acertos);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+}
