@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-*, :root { /* seletor universal para todos os elementos */
-    /* border: 1px solid red; bom para ver as tags separadas */
+*, :root { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* caixa de borta a borda */
+    box-sizing: border-box; 
 
     font-family: 'Inter', sans-serif;
     font-synthesis: none;
@@ -29,7 +28,6 @@ main {
     padding: 20px;
     max-width: 840px;
     margin: 0 auto 64px;
-    /* border: 1px solid red; */
 }
 
 header {
@@ -44,7 +42,7 @@ header h1 {
     color: var(--cor-texto);
 }
 
-#quiz { /* Contador - Para numero antes das perguntas */
+#quiz {
     counter-reset: quiz-item;
 
 }
@@ -68,8 +66,8 @@ header h1 {
     background-color: var(--cor-perguntas);
 }
  
-.quiz-item h3:before { /* Para escrever algo antes das perguntas */
-    counter-increment: quiz-item; /* chamar o contador */
+.quiz-item h3:before { 
+    counter-increment: quiz-item;
     content: counter(quiz-item);                   
     background-color: var(--cor-repostas);
     width:  28px;
@@ -79,7 +77,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* para mão achatar a bolinha */
+    flex-shrink: 0;
 }
 
 
@@ -100,27 +98,27 @@ header h1 {
     color: var(--cor-texto);
 }
 
-input { /* mudar a bolinha padrao para o que você quiser bola/quadrado */
-    all: unset; /*todas as propriedades do input */
+input { 
+    all: unset; 
     border: 1px solid #999999;
     border-radius: 50%;
     width: 16px;
     height: 16px;
 
-    display: flex; /* mudar a localização da bolinha */
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0; /* para nao achatar */
+    flex-shrink: 0;
 }
 
-input:checked {  /* mudar quando a bolinha estiver clicada */ 
+input:checked {  
     border: 1px solid var(--cor-acertos);
 }
 
-/* pseudo-selector */
-input:checked::before { /* elemento antes do conteudo */
-    content: ""; /* conteudo vazio pois vai criar uma rodinha, mas poderia ser um texto e etc */
+
+input:checked::before { 
+    content: ""; 
     width: 10px;
     height: 10px;
     display: block;

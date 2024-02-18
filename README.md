@@ -1,5 +1,5 @@
 # NLWexperts
-Evento NLW Expert - Trilha HTML+CSS+JS
+Evento NLW Expert - Trilha HTML + CSS + JS
 
 ## Tecnologias Utilizadas
 
